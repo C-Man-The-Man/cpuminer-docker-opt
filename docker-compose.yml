@@ -1,0 +1,21 @@
+services:
+  cpuminer:
+    image: c-man-the-man/cpuminer-docker-opt:latest
+    container_name: cpuminer
+
+    restart: unless-stopped
+
+    # Docker CPU limit (optional but aligned with CPU_FRACTION)
+    cpus: ${CPUS:-0.25}
+
+    init: true
+    tty: true
+
+    environment:
+      CPU_FRACTION: ${CPU_FRACTION}
+      POOL: ${POOL}
+      WALLET: ${WALLET}
+      WORKER: ${WORKER}
+      PASSWORD: ${PASSWORD:-x}
+      ALGO: ${ALGO:-sha256d}
+      EXTRA_FLAGS: ${EXTRA_FLAGS}
