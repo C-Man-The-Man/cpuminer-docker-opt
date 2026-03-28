@@ -15,7 +15,7 @@ RUN git clone --depth 1 https://github.com/JayDDee/cpuminer-opt.git .
 
 RUN ./autogen.sh && \
     case "$TARGETARCH" in \
-      amd64) CFLAGS="-O3 -march=x86-64-v3 -mtune=generic -fomit-frame-pointer" ;; \
+      amd64) CFLAGS="-O3 -march=x86-64-v3 -mtune=generic -fomit-frame-pointer -maes -mpclmul" ;; \
       arm64) CFLAGS="-O3 -march=armv8-a -mtune=generic -fomit-frame-pointer" ;; \
       *) CFLAGS="-O3" ;; \
     esac && \
