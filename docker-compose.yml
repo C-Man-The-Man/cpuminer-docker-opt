@@ -1,6 +1,6 @@
 services:
   cpuminer:
-    image: c-man-the-man/cpuminer-docker-opt:latest
+    image: ghcr.io/C-Man-The-Man/cpuminer-docker-opt:latest
     container_name: cpuminer
 
     restart: unless-stopped
