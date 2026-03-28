@@ -24,7 +24,7 @@ docker run -d --name cpuminer \
   -e CPU_FRACTION=0.25 \
   -e POOL=stratum+tcp://your-pool:port \
   -e WALLET=your_wallet_address \
-  -e WORKER=my_worker \
+  -e WORKER=worker_name \
   -e ALGO=sha256d \
   ghcr.io/c-man-the-man/cpuminer-docker-opt:latest
 ```
