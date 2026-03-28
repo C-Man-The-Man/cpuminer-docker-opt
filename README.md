@@ -26,7 +26,7 @@ docker run -d --name cpuminer \
   -e WALLET=your_wallet_address \
   -e WORKER=my_worker \
   -e ALGO=sha256d \
-  c-man-the-man/cpuminer-docker-opt:latest
+  ghcr.io/c-man-the-man/cpuminer-docker-opt:latest
 ```
 
 Replace the placeholder values with your own pool, wallet, and worker name.
@@ -37,7 +37,7 @@ You can also use Docker’s native CPU limit without setting CPU_FRACTION — th
 Clone the repository:
 
 ```bash
-git clone https://github.com/c-man-the-man/cpuminer-docker-opt.git
+git clone https://github.com/C-Man-The-Man/cpuminer-docker-opt.git
 cd cpuminer-docker-opt
 ```
 
@@ -53,6 +53,11 @@ View logs:
 
 ```bash
 docker compose logs -f
+```
+
+Stop and remove:
+```bash
+docker compose down
 ```
 
 ### Environment variables
@@ -71,7 +76,7 @@ docker compose logs -f
 
 ```bash
 docker buildx build --platform linux/amd64,linux/arm64 \
-  -t c-man-the-man/cpuminer-docker-opt:latest --push .
+  -t ghcr.io/c-man-the-man/cpuminer-docker-opt:latest --push .
 ```
   
 ## License
