@@ -7,7 +7,8 @@ This project builds directly from the upstream [cpuminer-opt](https://github.com
 Supports **all algorithms** available in cpuminer-opt (sha256d, scrypt, x11, lyra2, argon2d, and many more).
 
 ### Features
-- Easy fractional CPU targeting with the `--cpu` flag (`CPU_FRACTION` environment variable)
+- Easy fractional CPU targeting via `CPU_FRACTION`
+  (automatically converts CPU share into an appropriate thread count, see the `.env` file)
 - Environment-driven mode (perfect for docker-compose or any orchestrator)
 - Full CLI passthrough mode for advanced users
 - Automatic `wallet.worker` formatting for easy debugging
@@ -16,7 +17,9 @@ Supports **all algorithms** available in cpuminer-opt (sha256d, scrypt, x11, lyr
 
 For full algorithm list, tuning options, and miner documentation, see the [original cpuminer-opt repository](https://github.com/JayDDee/cpuminer-opt).
 
-### Quick Start (one-liner)
+---
+
+## Quick Start (one-liner)
 
 ```bash
 docker run -d --name cpuminer \
@@ -29,10 +32,17 @@ docker run -d --name cpuminer \
   ghcr.io/c-man-the-man/cpuminer-docker-opt:latest
 ```
 
-Replace the placeholder values with your own pool, wallet, and worker name.
-You can also use Docker’s native CPU limit without setting CPU_FRACTION — the entrypoint automatically matches the thread count.
+#### Note:
 
-### Advanced Setup (recommended – docker-compose + .env)
+- `CPU_FRACTION` controls how many CPU threads cpuminer will use.
+- `--cpus` is a Docker-level limit that controls how much CPU time the container is allowed to consume.
+- For best results, keep `CPU_FRACTION` and `--cpus` aligned.
+
+You may omit `CPU_FRACTION` if you prefer Docker to control CPU usage via `--cpus`.
+
+---
+
+## Advanced Setup (recommended – docker-compose + .env)
 
 Clone the repository:
 
@@ -60,28 +70,75 @@ Stop and remove:
 docker compose down
 ```
 
-### Environment variables
+---
 
-**Variable**            **Description**                             **Default**
-
-`CPU_FRACTION`          Fraction of CPU to use (0.25 = 25%)         1.0
-`POOL`                  Stratum pool URL                            (required)
-`WALLET`                Your wallet address                         (required)
-`WORKER`                Worker name (appended as wallet.worker)     (optional)
-`PASSWORD`              Pool password                               x (generic)
-`ALGO`                  Mining algorithm                            [complete list](https://github.com/JayDDee/cpuminer-opt/tree/master/algo)
-`EXTRA_FLAGS`           Any extra cpuminer-opt flags                (empty)
-
-### Building from Source
+## Building from Source
 
 ```bash
 docker buildx build --platform linux/amd64,linux/arm64 \
   -t ghcr.io/c-man-the-man/cpuminer-docker-opt:latest --push .
 ```
+
+---
+
+## Environment variables
+
+| Variable       | Description                                      | Default |
+|----------------|--------------------------------------------------|---------|
+| `CPU_FRACTION` | Fraction of CPU cores used (e.g. 0.25 = 25%)     | 1.0     |
+| `POOL`         | Stratum pool URL                                 | required|
+| `WALLET`       | Your wallet address                              | required|
+| `WORKER`       | Worker name                                      | optional|
+| `PASSWORD`     | Pool password                                    | x (generic)|
+| `ALGO`         | Mining algorithm                                 | [complete list](https://github.com/JayDDee/cpuminer-opt/tree/master/algo)|
+| `EXTRA_FLAGS`  | Any extra cpuminer-opt flags                     | optional|
+
+---
+
+## CPU behavior notes
+
+- `CPU_FRACTION` is converted internally into a thread count:
+        - Threads = CPU_FRACTION × available CPU cores
+        - The result is rounded to the nearest whole number (minimum 1 thread)
+- cpuminer runs with a fixed number of threads (`-t`), which are then scheduled by the OS within the CPU limits defined by Docker
+- Increasing `CPU_FRACTION` increases parallelism; decreasing it reduces resource usage and power consumption.
+
+---
   
 ## License
 
 This Docker image is provided under the same terms as cpuminer-opt.
 See the [original license](https://github.com/JayDDee/cpuminer-opt/blob/master/COPYING).
 
-### Enjoy simple, portable, and efficient CPU mining!
+---
+
+## Enjoy simple, portable, and efficient CPU mining!
+
+---
+
+## Donations
+
+**Bitcoin wallet address**
+```bc1qt9qpxmf0lu00dz8ff92wtpz5jc5tmtxewj7h83
+```
+
+**Litecoin wallet address**
+```ltc1q9d384fqzjcuy9a46d258exa8zqc70lma2ufd0n
+```
+
+**Dogecoin wallet address**
+```DTKb6X1im7p5xVi4w3rBWCqoSL2eLrGiDG
+```
+
+**EVM / Metamask  (ETH, ETC, OCTA, POL, USDT, USDC, DATA etc.)**
+```0x29d5d76F0555605878Ea112fEdcD859d825f45C2
+```
+
+**Solana wallet address**
+```F5VVkpFoh1nccBu62mnviNxDQBVd9QQ16yLTXrBoVpdw
+```
+
+**Kadena wallet address**
+```k:174f94ba7aa54eca1515f87b0f5deb1725cad6f7116f2277885e45af53908ae5
+```
+
