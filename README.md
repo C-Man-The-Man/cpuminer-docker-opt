@@ -119,26 +119,33 @@ See the [original license](https://github.com/JayDDee/cpuminer-opt/blob/master/C
 ## Donations
 
 **Bitcoin wallet address**
-```bc1qt9qpxmf0lu00dz8ff92wtpz5jc5tmtxewj7h83
+```text
+bc1qt9qpxmf0lu00dz8ff92wtpz5jc5tmtxewj7h83
 ```
 
 **Litecoin wallet address**
-```ltc1q9d384fqzjcuy9a46d258exa8zqc70lma2ufd0n
+```text
+ltc1q9d384fqzjcuy9a46d258exa8zqc70lma2ufd0n
 ```
 
 **Dogecoin wallet address**
-```DTKb6X1im7p5xVi4w3rBWCqoSL2eLrGiDG
+```text
+DTKb6X1im7p5xVi4w3rBWCqoSL2eLrGiDG
 ```
 
 **EVM / Metamask  (ETH, ETC, OCTA, POL, USDT, USDC, DATA etc.)**
-```0x29d5d76F0555605878Ea112fEdcD859d825f45C2
+```text
+0x29d5d76F0555605878Ea112fEdcD859d825f45C2
 ```
 
 **Solana wallet address**
-```F5VVkpFoh1nccBu62mnviNxDQBVd9QQ16yLTXrBoVpdw
+```text
+F5VVkpFoh1nccBu62mnviNxDQBVd9QQ16yLTXrBoVpdw
 ```
 
 **Kadena wallet address**
-```k:174f94ba7aa54eca1515f87b0f5deb1725cad6f7116f2277885e45af53908ae5
+```text
+k:174f94ba7aa54eca1515f87b0f5deb1725cad6f7116f2277885e45af53908ae5
 ```
 
+Thank you!
