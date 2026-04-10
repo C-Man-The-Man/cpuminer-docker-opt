@@ -121,32 +121,22 @@ See the [original license](https://github.com/JayDDee/cpuminer-opt/blob/master/C
 
 **Bitcoin wallet address**
 ```text
-bc1qt9qpxmf0lu00dz8ff92wtpz5jc5tmtxewj7h83
+bc1qpcfex53u7mqx4dc25gw7j7446amw9vn6743cn5
 ```
 
-**Litecoin wallet address**
+**EVM / Metamask  (ETH, ETC, OCTA, POL, PEAQ, MONAD, BASE etc.)**
 ```text
-ltc1q9d384fqzjcuy9a46d258exa8zqc70lma2ufd0n
-```
-
-**Dogecoin wallet address**
-```text
-DTKb6X1im7p5xVi4w3rBWCqoSL2eLrGiDG
-```
-
-**EVM / Metamask  (ETH, ETC, OCTA, POL, USDT, USDC, DATA etc.)**
-```text
-0x29d5d76F0555605878Ea112fEdcD859d825f45C2
+0xbE4879888d95B02B2FCaed2FcAeBbcf36829BDC9
 ```
 
 **Solana wallet address**
 ```text
-F5VVkpFoh1nccBu62mnviNxDQBVd9QQ16yLTXrBoVpdw
+7EHWvShXfjLJ2HhzTf4CsHgjKckivfMQMjnEoUAEqau
 ```
 
-**Kadena wallet address**
+***Sui wallet address**
 ```text
-k:174f94ba7aa54eca1515f87b0f5deb1725cad6f7116f2277885e45af53908ae5
+0x421a5a462f99c2d675d035d0c741ba5765a47c1e28f95d33ad770cd34a36a6ea
 ```
 
 **Thank you!**
