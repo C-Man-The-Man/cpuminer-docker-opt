@@ -134,7 +134,7 @@ bc1qpcfex53u7mqx4dc25gw7j7446amw9vn6743cn5
 7EHWvShXfjLJ2HhzTf4CsHgjKckivfMQMjnEoUAEqau
 ```
 
-***Sui wallet address**
+**Sui wallet address**
 ```text
 0x421a5a462f99c2d675d035d0c741ba5765a47c1e28f95d33ad770cd34a36a6ea
 ```
